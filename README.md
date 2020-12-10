@@ -45,3 +45,47 @@ $ cat marks_201* > all_marks.txt
 ```
 
 <br>
+
+#### <a name="accepting-input-from-stdin"></a>Accepting input from stdin
+
+```bash
+$ # combining input from stdin and other files
+$ printf 'Name\tMaths\tScience \nbaz\t56\t63\nbak\t71\t65\n' | cat - marks_2015.txt
+Name    Maths   Science
+baz     56      63
+bak     71      65
+Name    Maths   Science
+foo     67      78
+bar     87      85
+
+$ # - can be placed in whatever order is required
+$ printf 'Name\tMaths\tScience \nbaz\t56\t63\nbak\t71\t65\n' | cat marks_2015.txt -
+Name    Maths   Science
+foo     67      78
+bar     87      85
+Name    Maths   Science
+baz     56      63
+bak     71      65
+```
+
+<br>
+
+#### <a name="squeeze-consecutive-empty-lines"></a>Squeeze consecutive empty lines
+
+```bash
+$ printf 'hello\n\n\nworld\n\nhave a nice day\n'
+hello
+
+
+world
+
+have a nice day
+$ printf 'hello\n\n\nworld\n\nhave a nice day\n' | cat -s
+hello
+
+world
+
+have a nice day
+```
+
+<br>
