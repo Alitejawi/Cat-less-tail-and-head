@@ -89,3 +89,36 @@ have a nice day
 ```
 
 <br>
+
+#### <a name="prefix-line-numbers"></a>Prefix line numbers
+
+```bash
+$ # number all lines
+$ cat -n marks_201*
+     1  Name    Maths   Science
+     2  foo     67      78
+     3  bar     87      85
+     4  Name    Maths   Science
+     5  foo     70      75
+     6  bar     85      88
+     7  Name    Maths   Science
+     8  foo     68      76
+     9  bar     90      90
+
+$ # number only non-empty lines
+$ printf 'hello\n\n\nworld\n\nhave a nice day\n' | cat -sb
+     1  hello
+
+     2  world
+
+     3  have a nice day
+```
+
+* For more numbering options, check out the command `nl`
+
+```bash
+$ whatis nl
+nl (1)               - number lines of files
+```
+
+<br>
